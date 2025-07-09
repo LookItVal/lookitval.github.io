@@ -3,7 +3,7 @@ title: Look, It's Val!
 description: Personal Portfolio and Website of Quinn Valencia Cecil
 ---
 
-::section{class="landing"}
+::section{class="landing background-lambda"}
   ::div{class="left-text"}
     # Quinn _Valencia_ Cecil
     ::home-subtext
@@ -16,7 +16,7 @@ description: Personal Portfolio and Website of Quinn Valencia Cecil
   ::
 ::
 
-::section{class="about"}
+::section{class="about alt"}
   ::div{class="left-image"}
     ::home-hex-photo
   ::
@@ -32,6 +32,6 @@ description: Personal Portfolio and Website of Quinn Valencia Cecil
   ::skill-tree
 ::
 
-::section{class="portfolio"}
+::section{class="portfolio alt"}
   ## My _Portfolio_
 ::

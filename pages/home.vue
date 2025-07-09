@@ -15,12 +15,56 @@ const { data: page } = await useAsyncData('home', () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
-    padding: 0 7em;
-    overflow-y: hidden;
+    height: 100svh;
+    padding: 0 0 0 5em;
+    overflow: hidden;
 
-    .socials-bar {
-      height: 2rem;
+    .left-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1rem;
+      width: 100%;
+      z-index: 1;
+
+      h1 {
+        color: var(--lavender);
+        white-space: nowrap;
+      }
+
+      .socials-bar {
+        margin: 0.75rem 0;
+        height: 1.5em;
+      }
+    }
+
+    .right-image {
+      height: 100%;
+      img {
+        position: relative;
+        object-fit: cover;
+        object-position: right;
+        aspect-ratio: 1 / 2;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 0;
+        image-rendering: pixelated;
+      }
+
+      @media (max-width: 768px) {
+        img {
+          position: absolute;
+          object-fit: cover;
+          object-position: right;
+          aspect-ratio: 1 / 2;
+          left: 0;
+          top: 0;
+          height: 100vh;
+          min-width: 100vw;
+        }
+      }
     }
   }
 }

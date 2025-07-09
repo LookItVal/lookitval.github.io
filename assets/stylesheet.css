@@ -118,11 +118,6 @@ h1 {
     line-height: 1.2;
 }
 
-h2,h3,h4,h5 {
-    font-weight: 600;
-    line-height: 1.2;
-}
-
 h1,h2,h3,h4,h5 {
     margin: 0;
     color: var(--text);
@@ -202,4 +197,32 @@ button {
 
 .navbar button:hover {
     color: var(--subtext0);
+}
+
+.section.background-lambda::before {
+    content: "λ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    color: var(--base);
+    font-size: 120vh;
+    text-align: center;
+    translate: 0 -20% ;
+}
+
+.section.background-lambda.alt::before {
+    content: "λ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    color: var(--crust);
+    font-size: 120vh;
+    text-align: center;
+    translate: 0 -20% ;
+}
+
+.section.alt {
+    background-color: var(--mantle);
 }
