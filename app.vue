@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { LazyNuxtPage } from '#components';
+
+</script>
+
 <template>
   <div>
     <!-- SVG Defnitions -->
@@ -191,13 +196,9 @@
 
     <!-- Page Content -->
     <HomeNavbar />
-    <NuxtPage class="page-root"/>
+    <NuxtPage/>
   </div>
 </template>
 
 <style lang="less" scoped>
-.page-root {
-  width: 100%;
-  overflow-x: hidden;
-}
 </style>
