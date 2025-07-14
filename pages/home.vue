@@ -183,5 +183,28 @@ const landingTextAdjustment = computed(() => {
       }
     }
   }
+
+  &.about .content {
+    background-color: var(--mantle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+    padding: 0 2.5%;
+
+    .left-image {
+      width: 50%;
+      height: 100%;
+    }
+
+    .right-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 75%;
+      text-align: center;
+    } 
+  }
 }
 </style>

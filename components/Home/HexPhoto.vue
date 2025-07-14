@@ -34,8 +34,8 @@
                                            C 7.565 74.5 7.565 74.5 7.565 67
                                            Z" fill="none" stroke-width="2" stroke="url(#greenGradient)" />
             <g class="image-mask" mask="url(#hexMask)">
-                <image class="hex-image background-image" ref="backgroundImage" href="~assets/Home/SoundGirlBackground.jpg" width="110%" height="110%" />
-                <image class="hex-image foreground-image" ref="foregroundImage" href="~assets/Home/SoundGirlRoto.png" width="115%" height="115%" />
+                <image class="hex-image background-image" ref="backgroundImage" href="~assets/Home/SoundGirlBackground.jpg" width="110%" height="110%" x="-1"/>
+                <image class="hex-image foreground-image" ref="foregroundImage" href="~assets/Home/SoundGirlRoto.png" width="115%" height="115%" x="1.5"/>
             </g>
         </svg>
     </div>
@@ -48,7 +48,7 @@ const hexContainer: Ref<HTMLElement | null> = ref(null);
 
 function handleScroll(): void {
     const scrollValue = window.scrollY;
-    const foregroundTranslateY = 10 + scrollValue * -0.01;
+    const foregroundTranslateY = 8 + scrollValue * -0.01;
     (foregroundImage.value as HTMLElement).style.transform = `translateY(${foregroundTranslateY}px) translateX(-15px)`;
 }
 
