@@ -58,7 +58,12 @@ function shimmer(): void {
     const animations = instaSvg.value!.querySelectorAll('animateMotion, animate');
     animations.forEach(anim => {
         if (typeof (anim as SVGAnimationElement).beginElement === 'function') {
-            (anim as SVGAnimationElement).beginElement();
+            const parent = anim.parentNode;
+            if (parent) {
+                parent.removeChild(anim);
+                parent.appendChild(anim);
+                (anim as SVGAnimationElement).beginElement();
+            }
         }
     });
     outerShimmerBall.value!.classList.remove('static');
@@ -77,6 +82,10 @@ function shimmer(): void {
         isAnimating.value = false;
     }, 1000);
 }
+
+defineExpose({
+  shimmer
+});
 </script>
 
 

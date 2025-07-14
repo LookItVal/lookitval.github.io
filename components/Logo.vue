@@ -49,12 +49,12 @@
                                                L 7.5,0"
                 stroke="none" fill="none" />
                 <circle r="1" fill="url(#radial-gradient)">
-                    <animateMotion id="anim1" dur="1s" fill="freeze">
+                    <animateMotion id="anim1" dur="1s" fill="freeze" begin="indefinite">
                         <mpath href="#logo-path-1" />
                     </animateMotion>
                 </circle>
                 <circle r="1" fill="url(#radial-gradient)">
-                    <animateMotion id="anim3" dur="1s" fill="freeze">
+                    <animateMotion id="anim3" dur="1s" fill="freeze" begin="indefinite">
                         <mpath href="#logo-path-3" />
                     </animateMotion>
                 </circle>
@@ -67,7 +67,7 @@
                                                L 12.5,0" 
                 stroke="none" fill="none" />
                 <circle r="1" fill="url(#radial-gradient)">
-                    <animateMotion id="anim2" dur=".25s" fill="freeze">
+                    <animateMotion id="anim2" dur=".25s" fill="freeze" begin="indefinite">
                         <mpath href="#logo-path-2" />
                     </animateMotion>
                 </circle>
@@ -87,10 +87,17 @@ function shimmer(): void {
     isAnimating.value = true;
     const animations = logoSvg.value!.querySelectorAll('animateMotion');
     animations.forEach(anim => {
-        anim.beginElement();
+        const parent = anim.parentNode;
+        if (parent) {
+            parent.removeChild(anim);
+            parent.appendChild(anim);
+            (anim as SVGAnimationElement).beginElement();
+        }
     });
     setTimeout(() => isAnimating.value = false, 1000);
 }
+
+onMounted(() => setTimeout(shimmer, 500));
 </script>
 
 

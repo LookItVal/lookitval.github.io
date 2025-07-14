@@ -54,7 +54,12 @@ function shimmer(): void {
     isAnimating.value = true;
     const animations = linkedinSvg.value!.querySelectorAll('animateMotion');
     animations!.forEach(anim => {
-        anim.beginElement();
+        const parent = anim.parentNode;
+        if (parent) {
+            parent.removeChild(anim);
+            parent.appendChild(anim);
+            anim.beginElement();
+        }
     });
     shimmerBox.value!.classList.remove('static');
     shimmerBox.value!.classList.add('shimmer');
@@ -84,6 +89,10 @@ function shimmer(): void {
         isAnimating.value = false;
     }, 1000);
 }
+
+defineExpose({
+  shimmer
+});
 </script>
 
 

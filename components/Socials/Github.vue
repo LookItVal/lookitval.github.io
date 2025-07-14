@@ -34,6 +34,10 @@ function shimmer(): void {
         isAnimating.value = false;
     }, 1000);
 }
+
+defineExpose({
+  shimmer
+});
 </script>
 
 

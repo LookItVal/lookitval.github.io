@@ -82,6 +82,10 @@ const landingTextAdjustment = computed(() => {
     height: 100svh;
     padding: 0 0 0 5em;
     overflow: hidden;
+    
+    @media (max-width: 768px) {
+      padding: 0 0 0 0;
+    }
 
     .left-text {
       display: flex;
@@ -148,6 +152,11 @@ const landingTextAdjustment = computed(() => {
         opacity: 0;
         transform: translateX(100px);
       }
+      &.visible {
+        filter: blur(0px);
+        opacity: 1;
+        transform: translateX(0px);
+      }
 
       img {
         position: relative;
@@ -169,6 +178,7 @@ const landingTextAdjustment = computed(() => {
           top: 0;
           height: 100vh;
           min-width: 100vw;
+          transform: translateX(0px);
         }
       }
     }
