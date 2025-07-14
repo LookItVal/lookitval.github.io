@@ -144,7 +144,7 @@ const landingTextAdjustment = computed(() => {
 
 
     .right-image {
-      transition: opacity 0.2s ease-out, transform 0.4s ease-out, filter 0.4s ease-out;
+      transition: opacity 0.2s ease-out, transform 0.4s ease-out, filter 0.4s cubic-bezier(.4,.01,0,1);
       height: 100%;
 
       &:not(.visible) {
